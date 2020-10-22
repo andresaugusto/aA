@@ -5,7 +5,7 @@ import './App.css';
 
 import HomeMenu from './components/HomeMenu';
 
-function App() {
+export default function App() {
     return (
         <div className='App'>
             {/* WelcomeAnimation */}
@@ -47,5 +47,3 @@ function App() {
 //     </div>
 //   );
 // }
-
-export default App;
