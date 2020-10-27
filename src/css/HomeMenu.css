@@ -1,0 +1,58 @@
+.homePhysical {
+	margin: 0;
+	padding: 0;
+    -webkit-transform: translate(-50%, -50%);
+	position: absolute;
+	left: calc(50% + 90px);
+	top: calc(50% - 100px);
+	letter-spacing: 10px;
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: 'Cormorant Garamond', serif;
+	color: #999999;
+}
+
+.homeVirtual {
+	margin: 0;
+	padding: 0;
+    -webkit-transform: translate(-50%, -50%);
+	position: absolute;
+	left: calc(50% - 90px);
+	top: calc(50% + 120px);
+	letter-spacing: 20px;
+	font-size: 30px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: 'Cormorant Garamond', serif;
+	color: #999999;
+}
+
+.bracket {
+	color: rgba(59, 59, 59, 0);
+	text-shadow: 0px 0px 2px rgba(54, 54, 54, 0);
+}
+
+.creatingImmaterialSVGButton{
+	width: 230px;
+	height: 230px;
+	margin: 0;
+	padding: 0;
+    -webkit-transform: translate(-50%, -50%);
+    position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 0;
+}
+
+.creatingImmaterialImg {
+    width: 230px;
+    margin: 200px 0 10px 0;
+	margin: 0;
+	padding: 0;
+    -webkit-transform: translate(-50%, -50%);
+    position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: -1;
+}
