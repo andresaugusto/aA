@@ -15,7 +15,7 @@ export default function VirtualGallery() {
     // ORIGINAL
 
 
-    const history = useHistory()
+    // const history = useHistory()
     // const {virtual, setVirtual} = useContext(GalleriesContext);
 
     // return (
@@ -48,7 +48,8 @@ export default function VirtualGallery() {
 
 
     //TEMPORARY DATA
-    
+
+    const history = useHistory()
 
     useEffect(() => {
         fetchCharacters();

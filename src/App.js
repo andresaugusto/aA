@@ -25,8 +25,7 @@ export default function App() {
     
     const fetchProjects = async () => {
         const projectsData = await fetch(
-            // 'https://fathomless-sands-45081.herokuapp.com/projects'
-            DATA_URL
+            'https://fathomless-sands-45081.herokuapp.com/projects'
         )
         const projects = await projectsData.json();
         setProjects(projects)
