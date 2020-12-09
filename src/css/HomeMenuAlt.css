@@ -1,0 +1,41 @@
+.outerWrapper {
+	transform: rotate3d(1, -1, .47, 70deg);
+
+	perspective: 175px;
+}
+
+.innerWrapper {
+	transform: rotateX(30deg);
+}
+
+.homePhysical {
+	margin: 0;
+	padding: 0;
+    -webkit-transform: translate(-50%, -50%);
+	position: absolute;
+	left: calc(50% + 20px);
+	top: calc(50% - 250px);
+	letter-spacing: 20px;
+	font-size: 50px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: 'Cormorant Garamond', serif;
+	color: #999999;
+	z-index: +1;
+}
+
+.homeVirtual {
+	margin: 0;
+	padding: 0;
+    -webkit-transform: translate(-50%, -50%);
+	position: absolute;
+	left: calc(50% + 20px);
+	top: calc(50% + 150px);
+	letter-spacing: 30px;
+	font-size: 50px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: 'Cormorant Garamond', serif;
+	color: #999999;
+	z-index: +1;
+}

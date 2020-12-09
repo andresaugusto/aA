@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { motion, useCycle, AnimatePresence, useTransform, useMotionValue } from 'framer-motion';
+
+import EscorzoPath from './paths/EscorzoPath.js'
+import FetchGalleries from '../helperFunctions/FetchGalleries.js'
+
+import escorzoWhite from '../images/escorzo_white.png';
+import escorzoBlack from '../images/escorzo_black.png';
+import escorzoPlatinum from '../images/escorzo_platinum.png';
+
 import '../css/HomeMenu.css';
+// import '../css/HomeMenuAlt.css';
 
 export default function HomeMenu() {
+
+    // FetchGalleries()
+    
     return (
         <>
-            <h1 className='homePhysical'>physical</h1>
-            <h1 className='homeVirtual'>virtual</h1>
-            <div>
-                <img src='/public/images/corpus/escorzo/escorzo_white.png' alt='corpusCallosum' className='homeCorpus'/>
-            </div>
+            {EscorzoPath()}
         </>
     )
 };
