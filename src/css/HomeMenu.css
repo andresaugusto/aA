@@ -10,7 +10,8 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	font-family: 'Cormorant Garamond', serif;
-	color: #999999;
+	color: rgba(255, 255, 255, 0.45);
+	z-index: +10;
 }
 
 .homeVirtual {
@@ -25,15 +26,23 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	font-family: 'Cormorant Garamond', serif;
-	color: #999999;
+	color: rgba(255, 255, 255, 0.45);
+	z-index: +10;
 }
 
 .bracket {
-	color: rgba(59, 59, 59, 0);
+	font-size: 200%;
+	float: center;
+	top: calc(-50%);
+	color: rgba(15, 7, 7, 0);
 	text-shadow: 0px 0px 2px rgba(54, 54, 54, 0);
 }
 
-.creatingImmaterialSVGButton{
+.creatingImmaterialWrapper {
+	/* background: white; */
+}
+
+.creatingImmaterialSVGCanvas {
 	width: 230px;
 	height: 230px;
 	margin: 0;
@@ -42,7 +51,10 @@
     position: absolute;
 	left: 50%;
 	top: 50%;
-	z-index: 0;
+}
+
+.creatingImmaterialSVGPath {
+	z-index: +1;
 }
 
 .creatingImmaterialImg {
@@ -55,4 +67,9 @@
 	left: 50%;
 	top: 50%;
 	z-index: -1;
+	transition: 0.1s;
+}
+
+#mainImage {
+	transition: 0.5s;
 }
