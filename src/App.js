@@ -1,17 +1,26 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { GalleriesContext } from './helperFunctions/GalleriesContext'
+import { AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 
 import HomeMenu from './components/HomeMenu';
 import CreatingImmaterial from './components/CreatingImmaterial';
 import VirtualGallery from './components/VirtualGallery';
 import PhysicalGallery from './components/PhysicalGallery';
 
+//trying framer gallery and peek
+import { List } from './components/List';
+import { Item } from './components/Item';
+
+
 // import FetchGalleries from './helperFunctions/FetchGalleries'
 
 import './App.css';
 
 export default function App() {
+
+
+
 
     useEffect(() => {
         fetchProjects();
@@ -33,7 +42,6 @@ export default function App() {
 
         let virtual = [];
         let physical = [];
-
         
         projects.map((project) => {
             switch (project.gallery) {
@@ -53,14 +61,31 @@ export default function App() {
             setVirtual(virtual);
             setPhysical(physical);
         })
-
-        
     }
-
 
     const providerProjects = useMemo(() => ({ projects, setProjects }), [projects, setProjects])
     const providerPhysical = useMemo(() => ({ physical, setPhysical }), [physical, setPhysical])
     const providerVirtual = useMemo(() => ({ virtual, setVirtual }), [virtual, setVirtual])
+
+
+
+
+    //trying framer gallery and peek
+
+    function VG({ match }) {
+        let { id } = match.params;
+        const imageHasLoaded = true;
+
+        return (
+            <>
+                <List selectedId={id} />
+                <AnimatePresence>
+                    {id && imageHasLoaded && <Item id={id} key='item' />}
+                </AnimatePresence>
+            </>
+        )
+    }
+
 
 
 
@@ -74,16 +99,27 @@ export default function App() {
             {/* ROUTED PhysicalGallery */}
             {/* ROUTED PhysicalProject */}
             {/* ROUTED VirtualProject */}
-            <Switch>
-                <GalleriesContext.Provider value={ providerProjects, providerPhysical, providerVirtual }>
-                    <Route exact path='/' component={HomeMenu} />
-                    <Route exact path='/creating-immaterial' component={CreatingImmaterial}/>
-                    <Route exact path='/virtual' component={VirtualGallery}/>
-                    {/* <Route exact path='/virtual/:projectId' component={VirtualProject} /> */}
-                    <Route exact path='/physical' component={PhysicalGallery}/>
-                    {/* <Route exact path='/physical/:projectId' component={PhysicalProject} /> */}
-                </GalleriesContext.Provider>
-            </Switch>
+
+            <div className='container'>  {/* trying framer gallery and peek */}
+                <AnimateSharedLayout type='crossfade'> {/* trying framer gallery and peek */}
+
+                    <Switch>
+                        <GalleriesContext.Provider value={ providerProjects, providerPhysical, providerVirtual }>
+                            <Route exact path='/' component={HomeMenu} />
+                            <Route exact path='/creating-immaterial' component={CreatingImmaterial}/>
+        
+                            <Route exact path={['/virtual', '/:id']} component={VG} /> {/* trying framer gallery and peek */}
+        
+                            {/* <Route exact path='/virtual' component={VirtualGallery}/> */}
+                            {/* <Route exact path='/virtual/:projectId' component={VirtualProject} /> */}
+                            <Route exact path='/physical' component={PhysicalGallery}/>
+                            {/* <Route exact path='/physical/:projectId' component={PhysicalProject} /> */}
+                        </GalleriesContext.Provider>
+                    </Switch>
+
+                </AnimateSharedLayout>  {/* trying framer gallery and peek */}
+            </div>  {/* trying framer gallery and peek */}
+
         </div>
     );
 
