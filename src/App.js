@@ -9,8 +9,8 @@ import VirtualGallery from './components/VirtualGallery';
 import PhysicalGallery from './components/PhysicalGallery';
 
 //trying framer gallery and peek
-import { List } from './components/List';
-import { Item } from './components/Item';
+// import { List } from './components/List';
+// import { Item } from './components/Item';
 
 
 // import FetchGalleries from './helperFunctions/FetchGalleries'
@@ -70,21 +70,21 @@ export default function App() {
 
 
 
-    //trying framer gallery and peek
+    // //trying framer gallery and peek
 
-    function VG({ match }) {
-        let { id } = match.params;
-        const imageHasLoaded = true;
+    // function VG({ match }) {
+    //     let { id } = match.params;
+    //     const imageHasLoaded = true;
 
-        return (
-            <>
-                <List selectedId={id} />
-                <AnimatePresence>
-                    {id && imageHasLoaded && <Item id={id} key='item' />}
-                </AnimatePresence>
-            </>
-        )
-    }
+    //     return (
+    //         <>
+    //             <List selectedId={id} />
+    //             <AnimatePresence>
+    //                 {id && imageHasLoaded && <Item id={id} key='item' />}
+    //             </AnimatePresence>
+    //         </>
+    //     )
+    // }
 
 
 
@@ -100,25 +100,25 @@ export default function App() {
             {/* ROUTED PhysicalProject */}
             {/* ROUTED VirtualProject */}
 
-            <div className='container'>  {/* trying framer gallery and peek */}
-                <AnimateSharedLayout type='crossfade'> {/* trying framer gallery and peek */}
+            {/* <div className='container'>  trying framer gallery and peek */}
+                {/* <AnimateSharedLayout type='crossfade'> trying framer gallery and peek */}
 
                     <Switch>
                         <GalleriesContext.Provider value={ providerProjects, providerPhysical, providerVirtual }>
                             <Route exact path='/' component={HomeMenu} />
                             <Route exact path='/creating-immaterial' component={CreatingImmaterial}/>
         
-                            <Route exact path={['/virtual', '/:id']} component={VG} /> {/* trying framer gallery and peek */}
+                            {/* <Route exact path={['/virtual', '/:id']} component={VG} /> trying framer gallery and peek */}
         
-                            {/* <Route exact path='/virtual' component={VirtualGallery}/> */}
+                            <Route exact path='/virtual' component={VirtualGallery}/>
                             {/* <Route exact path='/virtual/:projectId' component={VirtualProject} /> */}
                             <Route exact path='/physical' component={PhysicalGallery}/>
                             {/* <Route exact path='/physical/:projectId' component={PhysicalProject} /> */}
                         </GalleriesContext.Provider>
                     </Switch>
 
-                </AnimateSharedLayout>  {/* trying framer gallery and peek */}
-            </div>  {/* trying framer gallery and peek */}
+                {/* </AnimateSharedLayout>  trying framer gallery and peek */}
+            {/* </div>  trying framer gallery and peek */}
 
         </div>
     );
