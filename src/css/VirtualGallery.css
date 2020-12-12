@@ -1,3 +1,24 @@
+.gallery-or-project-title {
+	/* width: 230px;
+	height: 230px; */
+	margin: 0 auto;
+	padding: 0;
+    -webkit-transform: translate(-50%, -50%);
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	/* letter-spacing: 20px; */
+	font-size: 10vw;
+	font-weight: 600;
+	/* text-transform: uppercase; */
+	font-family: 'Cormorant Garamond', serif;
+	color: rgba(255, 255, 255, 0.45);
+	z-index: -10;
+	justify-content: center;
+	top: 50%;
+	left: 50%;
+}
+
 .gallery-holder {
     /* margin-top: 10vh; */
     /* display: flex; */
@@ -5,15 +26,15 @@
 }
 
 .collage-holder {
-    width: 80vw;
-    max-width: 80vh;
+    width: 33vw;
+    max-width: 33vh;
     margin: 0 auto;
-    margin-top: 10vw;
-    margin-bottom: 10vw;
+    margin-top: 100px;
+    margin-bottom: 100px;
 	padding: 0;
 	left: 50%;
 	top: 50%;
-    background-color: grey;
+    /* background-color: rgb(136, 136, 136); */
 }
 
 .color-collage {
@@ -47,11 +68,12 @@ a {
 
 .image-in-collage {
     vertical-align: bottom;
-	/* filter: blur(0px) saturate(40%); */
+	filter: blur(0px) saturate(40%);
 	/* width: 200px; */
     /* height: 100%; */
 	width: 100%;
-	border-radius: 5px;
+	/* border-radius: 5px; */
+	border-radius: 50%;
 	box-shadow: 0 0 2px rgba(5, 5, 5, .25);
 	/* object-fit: cover; */
 	/* object-position: top; */

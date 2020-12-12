@@ -133,6 +133,17 @@ export default function VirtualGallery() {
 
 
 
+    const [projectTitle, setProjectTitle] = useState();
+
+    const handlePropertyExtraction = (x) => {
+        let selectedElementClassName = x.target.className;
+        console.log(selectedElementClassName);
+        setProjectTitle(selectedElementClassName)
+    }
+
+
+
+
     // // RANDOM SIDEWAYS POSITIONING
 
     // useEffect(() => {
@@ -156,6 +167,7 @@ export default function VirtualGallery() {
     // }
 
 
+
     return (
         // <>
         //     <h3 className='page-title'>Characters</h3>
@@ -169,6 +181,8 @@ export default function VirtualGallery() {
         // </>
 
         <>
+            {/* <div>{() => projectTitle === null ? 'VirtualProjects' : projectTitle}</div> */}
+            <div className='gallery-or-project-title'>VirtualProjects</div>
             <div className='gallery-holder'>
                  <div className='collage-holder'>
                      {characters.map((character, i) => (
@@ -176,14 +190,16 @@ export default function VirtualGallery() {
                             className='color-collage'
                             id={`cc${i + 1}`}
                             style={{
-                                // marginLeft: `${randomIntegers[i]}%`
+                                marginLeft: `${randomIntegers[i]}%`
                             }}>
                             <a className='image-link' 
                                 style={{cursor: 'pointer'}}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.pushState(`/projects/${character.char_id}`);
-                                }}>
+                                // onClick={(e) => {
+                                //     e.preventDefault();
+                                //     history.pushState(`/projects/${character.char_id}`);
+                                // }}
+                                onClick={handlePropertyExtraction}
+                                >
                                     <motion.img
                                         whileHover={{ scale: 1.01, duration: .1 }}
     									whileTap={{ scale: 0.99 }}
