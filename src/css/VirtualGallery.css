@@ -1,0 +1,82 @@
+.gallery-holder {
+    /* margin-top: 10vh; */
+    /* display: flex; */
+    /* height: 10vh; */
+}
+
+.collage-holder {
+    width: 80vw;
+    max-width: 80vh;
+    margin: 0 auto;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+	padding: 0;
+	left: 50%;
+	top: 50%;
+    background-color: grey;
+}
+
+.color-collage {
+	/* opacity: 0.3; */
+    max-height: 10%;
+    width: 15vh;
+}
+
+#cc1 {
+    /* margin-top: 10vh;
+    width: 20vh; */
+}
+
+#cc2 {
+    /* margin-left: 40%;
+    margin-top: 10%; */
+}
+
+#cc3 {
+}
+
+#cc4 {
+}
+
+#cc5 {
+    /* margin-top: 2%; */
+}
+
+a {
+}
+
+.image-in-collage {
+    vertical-align: bottom;
+	/* filter: blur(0px) saturate(40%); */
+	/* width: 200px; */
+    /* height: 100%; */
+	width: 100%;
+	border-radius: 5px;
+	box-shadow: 0 0 2px rgba(5, 5, 5, .25);
+	/* object-fit: cover; */
+	/* object-position: top; */
+}
+
+/* @media screen and (max-width: 500px) {
+        .colorsGalleryHolder {
+        display: block;
+    }
+  
+    .colorCollageHolder {
+        margin: 10px;
+        margin-bottom: 1500px;
+        margin-left: 15vh;
+    }
+  
+    body {
+        background-color: black;
+        overflow: auto;
+        height: visible;
+	}
+	
+	.wrapper {
+		overflow: auto;
+	}
+  
+} */
+

@@ -47,25 +47,114 @@ export default function VirtualGallery() {
 
 
 
-    //TEMPORARY DATA
+    // //TEMPORARY DATA
+
+    // const history = useHistory()
+
+    // useEffect(() => {
+    //     fetchCharacters();
+    //     getRandomIntegers();
+    // }, []);
+
+    // const [characters, setCharacters] = useState([]);
+
+    // const fetchCharacters = async () => {
+    //     const charactersData = await fetch(
+    //         'https://www.breakingbadapi.com/api/characters'
+    //     );
+
+    //     const characters = await charactersData.json();
+    //     setCharacters(characters);
+    // };
+
+    // // console.log(characters) 
+
+
+
+
+    // MERGED FOR CHARACTER QUANTITY DECISION
 
     const history = useHistory()
 
     useEffect(() => {
-        fetchCharacters();
+        fetchCharactersAndRandomIntegers();
     }, []);
 
     const [characters, setCharacters] = useState([]);
+    const [randomIntegers, setRandomIntegers] = useState([]);
 
-    const fetchCharacters = async () => {
+    const fetchCharactersAndRandomIntegers = async () => {
+
+
+
+
         const charactersData = await fetch(
             'https://www.breakingbadapi.com/api/characters'
         );
+
         const characters = await charactersData.json();
         setCharacters(characters);
+
+
+        // to keep at 5 items
+        while (characters.length > 5) {
+            characters.pop()
+        }
+
+        const characterQuantity = characters.length;
+        console.log(characterQuantity);
+
+
+
+        
+        let randomIntegers = [];
+
+        for (let i = 0; i < characterQuantity; i++) {
+            let min = Math.ceil(0);
+            let max = Math.floor(50);
+            let last = ((characterQuantity) - 1);
+            if (i === 0 || i === last) {
+                randomIntegers.push(Math.floor((max - min) / 2))
+                // randomIntegers.push('first or last')
+            } else {
+                randomIntegers.push(Math.floor(Math.random() * (max - min)) + min)
+            }
+        }
+
+        setRandomIntegers(randomIntegers);
+
+        console.log(randomIntegers)
+
+
+
+
     };
 
-    console.log(characters)
+
+
+
+    // // RANDOM SIDEWAYS POSITIONING
+
+    // useEffect(() => {
+    //     getRandomIntegers();
+    // }, []);
+
+    // const [randomIntegers, setRandomIntegers] = useState([]);
+
+    // function getRandomIntegers() {
+    //     let randomIntegers = [];
+
+    //     for (let i = 0; i < 5; i++) {
+    //         let min = Math.ceil(10);
+    //         let max = Math.floor(70);
+    //         randomIntegers.push(Math.floor(Math.random() * (max - min)) + min);
+    //     }
+
+    //     setRandomIntegers(randomIntegers);
+
+    //     console.log(randomIntegers)
+    // }
+
 
     return (
         // <>
@@ -80,26 +169,33 @@ export default function VirtualGallery() {
         // </>
 
         <>
-            <div className='galleryHolder'>
-                 {characters.map((character) => (
-                    <div key={character.char_id}>
-                        <a className='image-link' 
-                            style={{cursor: 'pointer'}}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                history.pushState(`/projects/${character.char_id}`);
+            <div className='gallery-holder'>
+                 <div className='collage-holder'>
+                     {characters.map((character, i) => (
+                        <div key={character.char_id}                 
+                            className='color-collage'
+                            id={`cc${i + 1}`}
+                            style={{
+                                // marginLeft: `${randomIntegers[i]}%`
                             }}>
-                                <motion.img
-                                    whileHover={{ scale: 1.005, duration: .1 }}
-									whileTap={{ scale: 0.999 }}
-									key={character.char_id}
-									className='image-in-collage'
-									src={character.img}
-									alt={character.name}
-                                />
-                        </a>
-                    </div>
-                ))}
+                            <a className='image-link' 
+                                style={{cursor: 'pointer'}}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    history.pushState(`/projects/${character.char_id}`);
+                                }}>
+                                    <motion.img
+                                        whileHover={{ scale: 1.01, duration: .1 }}
+    									whileTap={{ scale: 0.99 }}
+    									key={character.char_id}
+    									className='image-in-collage'
+    									src={character.img}
+    									alt={character.name}
+                                    />
+                            </a>
+                        </div>
+                    ))}
+                 </div>
             </div>
         </>
     );
