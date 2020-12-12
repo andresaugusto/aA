@@ -4,7 +4,10 @@ import { motion } from 'framer-motion';
 
 import escorzoWhite from '../../images/escorzo_white.png';
 
-export default function EscorzoPath() {
+import '../../css/EscorzoMenu.css';
+// import '../css/EscorzoMenuAlt.css';
+
+export default function EscorzoMenu() {
     
 
     return (
