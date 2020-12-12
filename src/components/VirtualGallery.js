@@ -96,7 +96,10 @@ export default function VirtualGallery() {
         setCharacters(characters);
 
 
-
+        // to keep at 5 items
+        while (characters.length > 5) {
+            characters.pop()
+        }
 
         const characterQuantity = characters.length;
         console.log(characterQuantity);
@@ -107,8 +110,8 @@ export default function VirtualGallery() {
         let randomIntegers = [];
 
         for (let i = 0; i < characterQuantity; i++) {
-            let min = Math.ceil(10);
-            let max = Math.floor(70);
+            let min = Math.ceil(0);
+            let max = Math.floor(50);
             let last = ((characterQuantity) - 1);
             if (i === 0 || i === last) {
                 randomIntegers.push(Math.floor((max - min) / 2))
@@ -153,10 +156,6 @@ export default function VirtualGallery() {
     // }
 
 
-
-
-
-
     return (
         // <>
         //     <h3 className='page-title'>Characters</h3>
@@ -177,7 +176,7 @@ export default function VirtualGallery() {
                             className='color-collage'
                             id={`cc${i + 1}`}
                             style={{
-                                marginLeft: `${randomIntegers[i]}%`
+                                // marginLeft: `${randomIntegers[i]}%`
                             }}>
                             <a className='image-link' 
                                 style={{cursor: 'pointer'}}

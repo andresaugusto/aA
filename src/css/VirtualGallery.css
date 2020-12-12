@@ -1,69 +1,63 @@
 .gallery-holder {
-    margin-top: 10vh;
-    display: flex;
-    height: 10vh;
+    /* margin-top: 10vh; */
+    /* display: flex; */
+    /* height: 10vh; */
 }
 
 .collage-holder {
-    /* margin-left: 125vw; */
-    /* margin-left: 10vw; */
-    /* margin-right: 200px; */
-    height: 80vh;
-    width: 60vw;
-    /* background-color: grey; */
+    width: 80vw;
+    max-width: 80vh;
+    margin: 0 auto;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+	padding: 0;
+	left: 50%;
+	top: 50%;
+    background-color: grey;
 }
 
 .color-collage {
-	/* position: relative; */
 	/* opacity: 0.3; */
-    /* display: flex; */
     max-height: 10%;
     width: 15vh;
-	/* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20px, 1px)); */
-  
-    /* z-index: -10; */
-    /* display: inline-flex; */
 }
 
 #cc1 {
-    margin-top: 10vh;
-    width: 20vh;
+    /* margin-top: 10vh;
+    width: 20vh; */
 }
 
 #cc2 {
-    margin-left: 40%;
-    margin-top: 10%;
-    /* margin-bottom: 20%; */
-    /* margin-top: 30%; */
+    /* margin-left: 40%;
+    margin-top: 10%; */
 }
 
 #cc3 {
-    margin-left: 20%;
-  
 }
 
 #cc4 {
-    margin-left: 30%;
 }
 
 #cc5 {
-    margin-left: 60%;
-    margin-top: 2%;
+    /* margin-top: 2%; */
+}
+
+a {
 }
 
 .image-in-collage {
+    vertical-align: bottom;
 	/* filter: blur(0px) saturate(40%); */
 	/* width: 200px; */
     /* height: 100%; */
 	width: 100%;
-	/* border-radius: 3px; */
-	/* box-shadow: 0 0 2px rgba(0, 0, 0, .25); */
-	/* object-fit: cover;
-	object-position: top; */
+	border-radius: 5px;
+	box-shadow: 0 0 2px rgba(5, 5, 5, .25);
+	/* object-fit: cover; */
+	/* object-position: top; */
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
         .colorsGalleryHolder {
         display: block;
     }
@@ -84,5 +78,5 @@
 		overflow: auto;
 	}
   
-}
+} */
 
